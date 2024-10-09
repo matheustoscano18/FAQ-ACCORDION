@@ -8,89 +8,119 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  font-family: "Work Sans", sans-serif;
 }
 
 body {
+  background: url(./assets/images/background-pattern-mobile.svg) no-repeat;
   background-color: hsl(275, 100%, 97%);
+  background-size: contain;
   font-family: "Work Sans", sans-serif;
-  width: 100vw;
+  width: 100%;
   display: flex;
   justify-content: center;
-}
-
-body > img {
-  width: 100vw;
-  position: fixed;
-  z-index: -1;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 .container {
-  width: 70vw;
-  padding: 18px;
-  background-color: white;
-  border-radius: 10px;
+  background: #fff;
+  width: 80vw;
+  padding: 30px 40px;
   display: flex;
   flex-direction: column;
+  gap: 10px;
+  border-radius: 10px;
 }
 
-.faq {
+.container .faq {
   display: flex;
+  gap: 20px;
   color: var(--title-color);
 }
 
-.faq > img {
-  width: 25px;
-  padding-right: 30px;
-  padding-left: 10px;
-}
-
-.faq > h1 {
+.container .faq h1 {
   font-weight: 700;
 }
 
-.faq-title {
-  width: 60vw;
-  font-size: 13px;
-  padding: 13px;
-  color: var(--title-color);
+.container .faq img {
+  width: 25px;
+}
+
+.container .faq-title {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-}
-
-.faq-title > h2 {
+  color: var(--title-color);
   font-weight: 600;
+  font-size: 12px;
+  padding: 10px 0px 10px 0px;
 }
 
-.faq-text {
-  font-weight: 400;
-  font-size: 16px;
-  padding: 13px;
-  color: var(--text-color);
-}
-
-.accordion {
-  background-color: white;
-  border: none;
-  padding: 10px;
-  width: 15px;
+.container .faq-title:hover {
+  color: rgb(138, 66, 138);
   cursor: pointer;
-  outline: none;
-  display: flex;
 }
 
-.accordion img {
-  width: 20px; /* Tamanho da imagem */
-  margin-left: 100%;
+.container .panel {
+  color: var(--text-color);
+  font-size: 16px;
+  font-weight: 400;
+  padding: 10px 0px 20px 0px;
 }
 
-.panel {
-    display: none;
-    overflow: hidden;
+.container .faq-title img {
+  cursor: pointer;
 }
 
-.toggle-icon.active .panel {
-    display: block;
+.hidden {
+  display: none;
 }
 
+.attribution {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 13px;
+}
 
+.container hr {
+  border: 1px solid #d3d3d3;
+}
 
+@media (max-width: 375px) {
+  .container {
+    transition: 0.5s ease-out;
+  }
+}
+
+@media (min-width: 375px) {
+  body {
+    background: url(assets/images/background-pattern-desktop.svg) no-repeat;
+    background-color: hsl(275, 100%, 97%);
+  }
+
+  .container {
+    width: 350px;
+    transition: 0.5s ease-out;
+  }
+}
+
+@media (min-width: 565px) {
+  body {
+    background: url(assets/images/background-pattern-desktop.svg) no-repeat;
+    background-color: hsl(275, 100%, 97%);
+  }
+
+  .container {
+    width: 550px;
+    transition: 0.5s ease-out;
+  }
+}
+
+@media (min-width: 1440px) {
+  body {
+    background-size: contain;
+  }
+}
